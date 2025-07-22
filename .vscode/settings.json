@@ -2,49 +2,10 @@
   // Use typescript version from node_modules instead of VSCode built-in typescript version
   "typescript.tsdk": "node_modules/typescript/lib",
 
-  // Enable the ESlint flat config support
-  "eslint.useFlatConfig": true,
-
   // Disable the default formatter to use eslint instead in general
   "prettier.enable": false,
-  "editor.formatOnSave": false,
-
-  // But enable formatter and auto fix specifically for Prisma
-  "[prisma]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "Prisma.prisma"
+  "[javascript]": {
+    "editor.defaultFormatter": "biomejs.biome"
   },
-
-  // Enable general auto fix with eslint
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
-    "source.organizeImports": "never"
-  },
-
-  //   Silent the stylistic rules in you IDE, but still auto fix them
-  "eslint.rules.customizations": [
-    { "rule": "style/*", "severity": "off" },
-    { "rule": "format/*", "severity": "off" },
-    { "rule": "*-indent", "severity": "off" },
-    { "rule": "*-spacing", "severity": "off" },
-    { "rule": "*-spaces", "severity": "off" },
-    { "rule": "*-order", "severity": "off" },
-    { "rule": "*-dangle", "severity": "off" },
-    { "rule": "*-newline", "severity": "off" },
-    { "rule": "*quotes", "severity": "off" },
-    { "rule": "*semi", "severity": "off" }
-  ],
-
-  // Enable eslint for all supported languages
-  "eslint.validate": [
-    "javascript",
-    "typescript",
-    "vue",
-    "html",
-    "markdown",
-    "json",
-    "jsonc",
-    "yaml",
-    "prisma"
-  ],
+  "editor.formatOnSave": true,
 }

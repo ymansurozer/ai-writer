@@ -5,9 +5,7 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/src/index.js",
-    "dev:tsc": "tsc --watch --preserveWatchOutput",
-    "dev:node": "node --env-file=.env --enable-source-maps --watch dist/src/index.js",
-    "dev": "pnpm run \"/dev:/\"",
+    "dev": "tsx watch --env-file=.env src/index.ts",
     "typecheck": "tsc --noEmit",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
@@ -15,14 +13,23 @@
   "keywords": [],
   "author": "",
   "devDependencies": {
-    "@eslint/js": "^9.17.0",
+    "@biomejs/biome": "1.9.4",
+    "@types/jsdom": "^21.1.7",
     "@types/node": "^20.4.2",
-    "eslint": "^9.17.0",
-    "globals": "^15.14.0",
-    "typescript": "^5.7.2",
-    "typescript-eslint": "^8.19.1"
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   },
   "engines": {
     "node": "20.x"
+  },
+  "dependencies": {
+    "@ai-sdk/anthropic": "^1.0.8",
+    "@ai-sdk/google": "^1.0.15",
+    "@ai-sdk/openai": "^1.0.14",
+    "@grapelaw/async-caller": "^1.1.0",
+    "@tavily/core": "^0.0.2",
+    "ai": "^4.0.29",
+    "chalk": "^5.4.1",
+    "zod": "^3.24.1"
   }
 }
